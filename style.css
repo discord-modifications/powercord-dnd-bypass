@@ -1,0 +1,55 @@
+.db-user-settings {
+   width: auto !important;
+   margin-bottom: 32px;
+}
+
+.db-friend-item.selectableItem-1MP3MQ.selected-31soGA {
+   cursor: pointer !important;
+}
+
+.db-friend-scroller {
+   max-height: 500px;
+}
+
+.db-friend-item {
+   padding: 6px;
+   padding-left: 18px;
+   margin-top: 4px;
+   margin-bottom: 4px;
+   height: auto;
+}
+
+.db-friend {
+   margin: 6px;
+   width: 32px;
+   height: 32px;
+   float: left;
+   border-radius: 360px;
+}
+
+.db-friend-name {
+   color: white;
+   float: left;
+   font-family: 'Whitney', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+   font-weight: 700;
+   margin-left: 8px;
+   font-size: 20px;
+}
+
+.db-friend-discrim {
+   color: hsla(0, 0%, 100%, .6);
+   float: left;
+   font-family: 'Whitney', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+   font-size: 16px;
+   position: relative;
+   top: 4px;
+   padding-right: 6px;
+}
+
+.db-friend-discrim::before {
+   content: '#'
+}
+
+.db-friend-name, .db-friend-discrim {
+   margin-top: 8px;
+}
