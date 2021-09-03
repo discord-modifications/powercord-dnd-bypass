@@ -12,4 +12,4 @@ Give your selection of friends the ability to bypass Do Not Disturb.
 
 # Preview
 
-<img src="https://media.wtf/64094881"/>
+<img src="https://media.wtf/37416390"/>
