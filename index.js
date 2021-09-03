@@ -18,14 +18,14 @@ module.exports = class DNDBypass extends Plugin {
       });
 
       inject('db-notifications', Notifications, 'shouldNotify', ([msg], res) => {
-         if (settings.friends.includes(msg.author.id)) {
+         if (this.settings.get('friends', []).includes(msg.author.id)) {
             // Guilds
-            if (msg.guild_id && !settings.guilds) {
+            if (msg.guild_id && !this.settings.get('guilds', false)) {
                return false;
             }
 
             // Groups
-            if (getChannel(msg.channel_id)?.type == 3 && !settings.groups) {
+            if (getChannel(msg.channel_id)?.type == 3 && !!this.settings.get('groups', false)) {
                return false;
             }
 
