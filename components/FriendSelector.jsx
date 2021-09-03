@@ -42,7 +42,9 @@ module.exports = class Settings extends React.Component {
       const SelectableItem = PopoutList.prototype.constructor.Item;
 
       const relationships = getRelationships();
-      const friends = Object.keys(relationships).filter(relation => relationships[relation] === 1);
+      let friends = Object.keys(relationships).filter(relation => relationships[relation] === 1);
+      friends = [...this.state.friends.filter(f => !friends.includes(f)), ...friends];
+
       return (
          <div>
             <PopoutList
