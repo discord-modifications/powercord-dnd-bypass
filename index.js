@@ -2,8 +2,9 @@ const { Plugin } = require('powercord/entities');
 const { inject, uninject } = require('powercord/injector');
 const { getModule } = require('powercord/webpack');
 
-const { getChannel } = getModule(['getChannel'], false);
+const { getChannelId } = getModule(['getLastSelectedChannelId'], false);
 const Notifications = getModule(['makeTextChatNotification'], false);
+const { getChannel } = getModule(['getChannel'], false);
 
 const Settings = require('./components/Settings.jsx');
 
@@ -17,8 +18,13 @@ module.exports = class DNDBypass extends Plugin {
          render: Settings
       });
 
-      inject('db-notifications', Notifications, 'shouldNotify', ([msg], res) => {
+      inject('db-notifications', Notifications, 'shouldNotify', ([msg, channelId], res) => {
          if (this.settings.get('friends', []).includes(msg.author.id)) {
+            // Check if were already looking at the channel
+            if (getChannelId() == channelId) {
+               return false;
+            }
+
             // Guilds
             if (msg.guild_id && !this.settings.get('guilds', false)) {
                return false;
