@@ -64,7 +64,7 @@ module.exports = class Settings extends React.Component {
                      .map(getUser)
                      .filter(user => this.state.friendsQuery ? user.username.toLowerCase().includes(this.state.friendsQuery.toLowerCase()) : true)
                      .map((user, i) =>
-                        <SelectableItem className='db-friend-item' id={user.id} key={i.toString()} selected={this.state.friends.includes(user.id)} onClick={(e) => {
+                        user && <SelectableItem className='db-friend-item' id={user.id} key={i.toString()} selected={this.state.friends.includes(user.id)} onClick={(e) => {
                            if (!e.selected) {
                               this.state.friends.push(e.id);
                               this._set('friends', this.state.friends);
