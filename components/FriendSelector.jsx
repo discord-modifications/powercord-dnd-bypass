@@ -62,7 +62,7 @@ module.exports = class Settings extends React.Component {
                <VerticalScroller className={`${this.state.classes.scroller} db-friend-scroller`}>
                   {friends
                      .map(getUser)
-                     .filter(user => this.state.friendsQuery ? user.username.toLowerCase().includes(this.state.friendsQuery.toLowerCase()) : true)
+                     .filter(user => this.state.friendsQuery ? user?.username?.toLowerCase().includes(this.state.friendsQuery.toLowerCase()) : true)
                      .map((user, i) =>
                         user && <SelectableItem className='db-friend-item' id={user.id} key={i.toString()} selected={this.state.friends.includes(user.id)} onClick={(e) => {
                            if (!e.selected) {
