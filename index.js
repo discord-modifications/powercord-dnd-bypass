@@ -21,7 +21,7 @@ module.exports = class DNDBypass extends Plugin {
       inject('db-notifications', Notifications, 'shouldNotify', ([msg, channelId], res) => {
          if (this.settings.get('friends', []).includes(msg.author.id)) {
             // Check if were already looking at the channel
-            if (getChannelId() == channelId) {
+            if (document.hasFocus() && getChannelId() == channelId) {
                return false;
             }
 
