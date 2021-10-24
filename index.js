@@ -4,7 +4,7 @@ const { getModule } = require('powercord/webpack');
 
 const { getChannelId } = getModule(['getLastSelectedChannelId'], false);
 const Notifications = getModule(['makeTextChatNotification'], false);
-const { getChannel } = getModule(['getChannel'], false);
+const { getChannel } = getModule(['hasChannel'], false);
 
 const Settings = require('./components/Settings.jsx');
 
