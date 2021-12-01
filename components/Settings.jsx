@@ -27,7 +27,7 @@ module.exports = class Settings extends React.Component {
             >
                Notify if user speaks in group chats
             </SwitchItem>
-            <FriendSelector {...this.props} />;
+            <FriendSelector {...this.props} />
          </div>
       );
    }
