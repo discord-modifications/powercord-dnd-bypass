@@ -28,7 +28,8 @@ module.exports = class Settings extends React.Component {
             alignCenter: (await getModule(['alignCenter'])).alignCenter,
             scroller: (await getModule(['listWrapper', 'scroller'])).scroller,
             discriminator: (await getModule(['discriminator', 'avatar', 'scroller'])).discriminator,
-            userText: (await getModule(['discriminator', 'avatar', 'scroller'])).userText
+            userText: (await getModule(['discriminator', 'avatar', 'scroller'])).userText,
+            popoutList: getModule(['popoutList'], false).popoutList
          }
       });
    }
@@ -47,8 +48,8 @@ module.exports = class Settings extends React.Component {
 
       return (
          <div>
-            <PopoutList
-               className={`db-user-settings ${this.state.classes.auditLogsFilter} ${this.state.classes.elevationBorderHigh}`}
+            <div
+               className={`db-user-settings ${this.state.classes.popoutList} ${this.state.classes.auditLogsFilter} ${this.state.classes.elevationBorderHigh}`}
                popoutKey='db-users'
             >
                <PopoutListSearchBar
@@ -100,7 +101,7 @@ module.exports = class Settings extends React.Component {
                      })
                   }
                </VerticalScroller>
-            </PopoutList>
+            </div>
          </div>
       );
    }
