@@ -23,7 +23,7 @@ module.exports = class Settings extends React.Component {
          getUser: (await getModule(['getUser', 'getUsers'])).getUser,
          getRelationships: (await getModule(['getRelationships'])).getRelationships,
          classes: {
-            auditLogsFilter: (await getModule(['guildSettingsAuditLogsUserFilterPopout'])).guildSettingsAuditLogsUserFilterPopout,
+            auditLogsFilter: (await getModule(['selectFilterPopout'])).selectFilterPopout,
             elevationBorderHigh: (await getModule(['elevationBorderHigh'])).elevationBorderHigh,
             alignCenter: (await getModule(['alignCenter'])).alignCenter,
             scroller: (await getModule(['listWrapper', 'scroller'])).scroller,
