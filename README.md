@@ -23,4 +23,5 @@
 
 ### Previews
 
-![Image](https://media.wtf/95342663) <br />
+![image](https://user-images.githubusercontent.com/98427312/182038611-6ed41c5c-81b5-4fc8-ad0f-9fc4cd5b30c4.png)
+
